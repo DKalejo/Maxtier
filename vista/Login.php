@@ -8,7 +8,11 @@
   <title>Login</title>
 </head>
 <body>
-  <form method="post" action="../controlador/log.php">
+  <?php include '../controlador/Login.php'?>
+  <?php if(!empty($message)):?>
+    <p><?php echo $message?></p>
+  <?php endif;?>
+  <form method="post" action="../controlador/Login.php">
     <input type="text" name="username" placeholder="Usuario" required />
     <input type="password" name="password" placeholder="Contraseña" required />
     <button type="submit" name="login">Ingresar</button>
